@@ -9,7 +9,7 @@ Require Export Le_Ks.
 (*********************************************************************)
 
 
-Boxed Fixpoint nweight (a : form) : nat :=
+Fixpoint nweight (a : form) : nat :=
   match a with
   | Atom _ => 0
   | Falsum => 0

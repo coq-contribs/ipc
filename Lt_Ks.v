@@ -5,7 +5,7 @@ Require Export Lt.
 Require Export Le_Ks.
 
 
-Boxed Fixpoint count_undecs (n : nested_imps) : nat :=
+Fixpoint count_undecs (n : nested_imps) : nat :=
   match n with
   | nil => 0
   | Undecorated _ :: n => S (count_undecs n)

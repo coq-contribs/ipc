@@ -106,7 +106,7 @@ Qed.
 (*      max                                                         *)
 
 
-Boxed Fixpoint max (n m : nat) {struct n} : nat :=
+Fixpoint max (n m : nat) {struct n} : nat :=
   match n with
   | O => m
   | S p => match m with

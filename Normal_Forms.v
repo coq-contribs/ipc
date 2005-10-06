@@ -17,7 +17,7 @@ with nimp : Set :=
 
 
 
-Boxed Fixpoint nf2form (x : normal_form) : form :=
+Fixpoint nf2form (x : normal_form) : form :=
   match x with
   | NFalsum => Falsum
   | NAtom i => Atom i
@@ -35,7 +35,7 @@ Definition nf_list := list normal_form.
 Definition nf_nil := nil (A:=normal_form).
 
 
-Boxed Fixpoint nvimp (l : list Int) : normal_form -> normal_form :=
+Fixpoint nvimp (l : list Int) : normal_form -> normal_form :=
   match l with
   | nil => fun a : normal_form => a
   | i :: l => fun a : normal_form => nvimp l (AImp i a)

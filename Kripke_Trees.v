@@ -21,7 +21,7 @@ Inductive Kripke_Model (A : Set) (World : A -> Type)
 
 
 
-Boxed Fixpoint forces (A : Set) (World : A -> Type) 
+Fixpoint forces (A : Set) (World : A -> Type) 
  (le : A -> A -> Type) (forces0 : A -> Int -> Prop) 
  (k : A) (a : form) {struct a} : Prop :=
   match a with

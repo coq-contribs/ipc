@@ -26,7 +26,7 @@ Definition decorated_nested_imp2form (x : decorated_nested_imp) :=
 
 
 
-Boxed Fixpoint rev_app (ds : decorated_nested_imps) :
+Fixpoint rev_app (ds : decorated_nested_imps) :
  nested_imps -> nested_imps :=
   match ds with
   | nil => fun ni : nested_imps => ni

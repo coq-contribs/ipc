@@ -19,7 +19,7 @@ with Forest : Set :=
   | Cons_Forest : Tree -> Forest -> Forest.
 
 
-Boxed Fixpoint height_tree (t : Tree) : nat :=
+Fixpoint height_tree (t : Tree) : nat :=
   match t with
   | node a succs => S (height_forest succs)
   end

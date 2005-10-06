@@ -4,7 +4,7 @@
 Require Import Rules.
 
 
-Boxed Fixpoint weight (a : form) : nat :=
+Fixpoint weight (a : form) : nat :=
   match a with
   | Falsum => 1
   | Atom _ => 1
@@ -29,7 +29,7 @@ Boxed Fixpoint weight (a : form) : nat :=
   end.
 
 
-Boxed Fixpoint weight_goal (a : form) : nat :=
+Fixpoint weight_goal (a : form) : nat :=
   match a with
   | Falsum => 0
   | Atom _ => 0

@@ -6,13 +6,13 @@ Require Export Weight.
 
 Definition vlist := list (list Int * form).
 
-Boxed Fixpoint vlist2list (gamma : vlist) : flist :=
+Fixpoint vlist2list (gamma : vlist) : flist :=
   match gamma with
   | nil => fnil
   | (l, a) :: gamma => vimp l a :: vlist2list gamma
   end.
 
-Boxed Fixpoint vlist2hlist (gamma : vlist) : flist :=
+Fixpoint vlist2hlist (gamma : vlist) : flist :=
   match gamma with
   | nil => fnil
   | (l, a) :: gamma => a :: vlist2hlist gamma
@@ -578,7 +578,7 @@ Qed.
 (********************************************************************)
 
 
-Boxed Fixpoint list2vlist (gamma : flist) : vlist :=
+Fixpoint list2vlist (gamma : flist) : vlist :=
   match gamma with
   | nil => nil (A:=list Int * form)
   | a :: gamma => (nil, a) :: list2vlist gamma

@@ -18,7 +18,7 @@ Definition fnil := nil (A:=form).
 
 (* vimp qs a := vec(qs) imp a *)
 
-Boxed Fixpoint vimp (qs : list Int) : form -> form :=
+Fixpoint vimp (qs : list Int) : form -> form :=
   match qs with
   | nil => fun a : form => a
   | q :: qs => fun a : form => vimp qs (Imp (Atom q) a)
@@ -30,7 +30,7 @@ Boxed Fixpoint vimp (qs : list Int) : form -> form :=
 (* Substitute (Atom i) by a in b:                                    *)
 
 
-Boxed Fixpoint subst_form (i : Int) (a b : form) {struct b} : form :=
+Fixpoint subst_form (i : Int) (a b : form) {struct b} : form :=
   match b with
   | Falsum => Falsum
   | Atom j => match equal_dec i j with
@@ -67,7 +67,7 @@ Qed.
 
 (************************************************************************)
 
-Boxed Fixpoint below_form (a : form) (i : Int) {struct a} : Prop :=
+Fixpoint below_form (a : form) (i : Int) {struct a} : Prop :=
   match a with
   | Falsum => True
   | Atom j => Less j i

@@ -125,7 +125,7 @@ Qed.
 (*********************************************************)
 (*		Definition height         	  	 *)
 
-Boxed Fixpoint height (t : avl_tree) : nat :=
+Fixpoint height (t : avl_tree) : nat :=
   match t with
   | Avl_Nil => 0
   | Avl_Node _ _ l r _ => S (max (height l) (height r))
@@ -479,7 +479,7 @@ Qed.
 (*****************************************************************)
 (*           height_avl                                          *)
 
-Boxed Fixpoint height_avl (t : avl_tree) : nat :=
+Fixpoint height_avl (t : avl_tree) : nat :=
   match t with
   | Avl_Nil => 0
   | Avl_Node _ _ l _ Left_Balanced => S (height_avl l)
@@ -928,7 +928,7 @@ Qed.
 (*  equiv                                                                  *)
 
 
-Boxed Fixpoint lin_avl (t : avl_tree) : list (Int * B) :=
+Fixpoint lin_avl (t : avl_tree) : list (Int * B) :=
   match t with
   | Avl_Nil => nil (A:=Int * B)
   | Avl_Node k d l r _ => lin_avl l ++ (k, d) :: lin_avl r

@@ -4,7 +4,7 @@ Require Export Disjunct.
 Require Export NDeco_Sound.
 
 
-Boxed Fixpoint n2forest (n : nested_imps) : Forest atoms :=
+Fixpoint n2forest (n : nested_imps) : Forest atoms :=
   match n with
   | nil => Nil_Forest atoms
   | Undecorated _ :: n => n2forest n
