@@ -3,7 +3,7 @@ Title: Intuitionistic Propositional Checker
 Author: Klaus Weich
 Institution: LMU, Munich
 Description: 
-  This thesis treats proof search in intuitionistic propositional logic,
+  This development treats proof search in intuitionistic propositional logic,
   a fragment of any constructive type theory. We present new and more
   efficient decision procedures for intuitionistic propositional
   logic. They themselves are given by (non-formal) constructive proofs.
@@ -13,5 +13,5 @@ Description:
   intuitionistic propositional logic in Coq; the proof searcher was
   automatically extracted.
 Keywords: intuitionistic logic , proof search , proof-as-programs ,
-  correct-by-construction , program verification
+  correct-by-construction , program verification, program extraction 
 
