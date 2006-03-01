@@ -1,0 +1,119 @@
+benchmark.cmo: benchmark.ml search.cmo test_formulae.cmo
+benchmark.cmx: benchmark.ml search.cmx test_formulae.cmx
+lexer.cmo: lexer.ml parser.cmo search.cmo
+lexer.cmx: lexer.ml parser.cmx search.cmx
+parser.cmo: parser.ml search.cmo
+parser.cmx: parser.ml search.cmx
+search.cmo: search.ml
+search.cmx: search.ml
+stuff.cmo: stuff.ml
+stuff.cmx: stuff.ml
+test_formulae.cmo: test_formulae.ml search.cmo
+test_formulae.cmx: test_formulae.ml search.cmx
+test.cmo: test.ml search.cmo benchmark.cmo test_formulae.cmo
+test.cmx: test.ml search.cmx benchmark.cmx test_formulae.cmx
+AvlTrees.vo: AvlTrees.v ML_Int.vo My_Arith.vo
+AvlTrees.vi: AvlTrees.v ML_Int.vo My_Arith.vo
+Cons_Counter_Model.vo: Cons_Counter_Model.v Disjunct.vo NDeco_Sound.vo
+Cons_Counter_Model.vi: Cons_Counter_Model.v Disjunct.vo NDeco_Sound.vo
+Derivable_Def_compute_derivations.vo: Derivable_Def_compute_derivations.v Derivations.vo
+Derivable_Def_compute_derivations.vi: Derivable_Def_compute_derivations.v Derivations.vo
+Derivable_Def_dont_compute_derivations.vo: Derivable_Def_dont_compute_derivations.v Derivations.vo
+Derivable_Def_dont_compute_derivations.vi: Derivable_Def_dont_compute_derivations.v Derivations.vo
+Derivable_Def.vo: Derivable_Def.v Derivable_Def_dont_compute_derivations.vo
+Derivable_Def.vi: Derivable_Def.v Derivable_Def_dont_compute_derivations.vo
+Derivable_Tools.vo: Derivable_Tools.v Derivable_Def.vo
+Derivable_Tools.vi: Derivable_Tools.v Derivable_Def.vo
+Derivations.vo: Derivations.v Forms.vo
+Derivations.vi: Derivations.v Forms.vo
+Disjunct.vo: Disjunct.v In_NGamma.vo
+Disjunct.vi: Disjunct.v In_NGamma.vo
+Extr.vo: Extr.v Search.vo
+Extr.vi: Extr.v Search.vo
+Forces_Gamma.vo: Forces_Gamma.v In_Gamma.vo Forces_NGamma.vo
+Forces_Gamma.vi: Forces_Gamma.v In_Gamma.vo Forces_NGamma.vo
+Forces_NGamma.vo: Forces_NGamma.v Le_Ks.vo
+Forces_NGamma.vi: Forces_NGamma.v Le_Ks.vo
+Forms.vo: Forms.v ML_Int.vo My_Nth.vo
+Forms.vi: Forms.v ML_Int.vo My_Nth.vo
+In_Gamma.vo: In_Gamma.v In_NGamma.vo
+In_Gamma.vi: In_Gamma.v In_NGamma.vo
+In_NGamma.vo: In_NGamma.v Kripke_Trees.vo Normal_Forms.vo
+In_NGamma.vi: In_NGamma.v Kripke_Trees.vo Normal_Forms.vo
+Kripke_Trees.vo: Kripke_Trees.v AvlTrees.vo Trees.vo Derivations.vo
+Kripke_Trees.vi: Kripke_Trees.v AvlTrees.vo Trees.vo Derivations.vo
+Le_Ks.vo: Le_Ks.v Rev_App.vo
+Le_Ks.vi: Le_Ks.v Rev_App.vo
+Lt_Ks.vo: Lt_Ks.v Le_Ks.vo
+Lt_Ks.vi: Lt_Ks.v Le_Ks.vo
+Minimal.vo: Minimal.v Forces_Gamma.vo Derivable_Tools.vo
+Minimal.vi: Minimal.v Forces_Gamma.vo Derivable_Tools.vo
+ML_Int.vo: ML_Int.v
+ML_Int.vi: ML_Int.v
+My_Arith.vo: My_Arith.v
+My_Arith.vi: My_Arith.v
+My_Nth.vo: My_Nth.v
+My_Nth.vi: My_Nth.v
+NDeco_Sound.vo: NDeco_Sound.v NMinimal.vo
+NDeco_Sound.vi: NDeco_Sound.v NMinimal.vo
+NMinimal.vo: NMinimal.v Forces_NGamma.vo Derivable_Tools.vo
+NMinimal.vi: NMinimal.v Forces_NGamma.vo Derivable_Tools.vo
+Normal_Forms.vo: Normal_Forms.v Forms.vo
+Normal_Forms.vi: Normal_Forms.v Forms.vo
+NRules.vo: NRules.v Cons_Counter_Model.vo NSound.vo
+NRules.vi: NRules.v Cons_Counter_Model.vo NSound.vo
+NSearch.vo: NSearch.v Disjunct.vo NWeight.vo Lt_Ks.vo NRules.vo
+NSearch.vi: NSearch.v Disjunct.vo NWeight.vo Lt_Ks.vo NRules.vo
+NSound.vo: NSound.v Le_Ks.vo Derivable_Tools.vo
+NSound.vi: NSound.v Le_Ks.vo Derivable_Tools.vo
+NWeight.vo: NWeight.v Regular_Avl.vo Le_Ks.vo
+NWeight.vi: NWeight.v Regular_Avl.vo Le_Ks.vo
+Regular_Avl.vo: Regular_Avl.v ML_Int.vo AvlTrees.vo
+Regular_Avl.vi: Regular_Avl.v ML_Int.vo AvlTrees.vo
+Rev_App.vo: Rev_App.v In_NGamma.vo
+Rev_App.vi: Rev_App.v In_NGamma.vo
+Rules.vo: Rules.v Minimal.vo Sound.vo NSearch.vo
+Rules.vi: Rules.v Minimal.vo Sound.vo NSearch.vo
+Search.vo: Search.v Rules.vo Weight.vo
+Search.vi: Search.v Rules.vo Weight.vo
+Sound.vo: Sound.v NSound.vo In_Gamma.vo
+Sound.vi: Sound.v NSound.vo In_Gamma.vo
+Trees.vo: Trees.v My_Arith.vo
+Trees.vi: Trees.v My_Arith.vo
+Weight.vo: Weight.v Rules.vo
+Weight.vi: Weight.v Rules.vo
+AvlTrees.html: AvlTrees.v ML_Int.html My_Arith.html
+Cons_Counter_Model.html: Cons_Counter_Model.v Disjunct.html NDeco_Sound.html
+Derivable_Def_compute_derivations.html: Derivable_Def_compute_derivations.v Derivations.html
+Derivable_Def_dont_compute_derivations.html: Derivable_Def_dont_compute_derivations.v Derivations.html
+Derivable_Def.html: Derivable_Def.v Derivable_Def_dont_compute_derivations.html
+Derivable_Tools.html: Derivable_Tools.v Derivable_Def.html
+Derivations.html: Derivations.v Forms.html
+Disjunct.html: Disjunct.v In_NGamma.html
+Extr.html: Extr.v Search.html
+Forces_Gamma.html: Forces_Gamma.v In_Gamma.html Forces_NGamma.html
+Forces_NGamma.html: Forces_NGamma.v Le_Ks.html
+Forms.html: Forms.v ML_Int.html My_Nth.html
+In_Gamma.html: In_Gamma.v In_NGamma.html
+In_NGamma.html: In_NGamma.v Kripke_Trees.html Normal_Forms.html
+Kripke_Trees.html: Kripke_Trees.v AvlTrees.html Trees.html Derivations.html
+Le_Ks.html: Le_Ks.v Rev_App.html
+Lt_Ks.html: Lt_Ks.v Le_Ks.html
+Minimal.html: Minimal.v Forces_Gamma.html Derivable_Tools.html
+ML_Int.html: ML_Int.v
+My_Arith.html: My_Arith.v
+My_Nth.html: My_Nth.v
+NDeco_Sound.html: NDeco_Sound.v NMinimal.html
+NMinimal.html: NMinimal.v Forces_NGamma.html Derivable_Tools.html
+Normal_Forms.html: Normal_Forms.v Forms.html
+NRules.html: NRules.v Cons_Counter_Model.html NSound.html
+NSearch.html: NSearch.v Disjunct.html NWeight.html Lt_Ks.html NRules.html
+NSound.html: NSound.v Le_Ks.html Derivable_Tools.html
+NWeight.html: NWeight.v Regular_Avl.html Le_Ks.html
+Regular_Avl.html: Regular_Avl.v ML_Int.html AvlTrees.html
+Rev_App.html: Rev_App.v In_NGamma.html
+Rules.html: Rules.v Minimal.html Sound.html NSearch.html
+Search.html: Search.v Rules.html Weight.html
+Sound.html: Sound.v NSound.html In_Gamma.html
+Trees.html: Trees.v My_Arith.html
+Weight.html: Weight.v Rules.html
