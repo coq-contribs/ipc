@@ -1,3 +1,4 @@
+-R . IPC
 AvlTrees.v
 Cons_Counter_Model.v
 Derivable_Def_compute_derivations.v
