@@ -3853,9 +3853,10 @@ Qed.
 End avl_trees.
 
 
-(*
+
 (* In order to extract a ML program use:  *)
 
+(*
 Require Extraction.
 
 Extract Constant Int => int.
