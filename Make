@@ -34,4 +34,4 @@ Search.v
 Sound.v
 Trees.v
 Weight.v
--custom "ocamlopt -o benchmark search.mli search.ml test_formulae.ml benchmark.ml" "Extr.vo test_formulae.ml benchmark.ml" benchmark
+-custom "$(CAMLBIN)ocamlopt -o benchmark search.mli search.ml test_formulae.ml benchmark.ml" "Extr.vo test_formulae.ml benchmark.ml" benchmark
