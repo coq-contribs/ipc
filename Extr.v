@@ -4,7 +4,7 @@
 Require Import Search.
 
 Unset Extraction Optimize.
-
+Set Extraction AccessOpaque.
 
 (*
 Extract Inductive unit => unit [ "()" ].
