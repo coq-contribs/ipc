@@ -4,6 +4,7 @@ Require Import ML_Int.
 Require Import My_Arith.
 Require Import List.
 
+Global Set Asymmetric Patterns.
 
 Section avl_trees.
 
