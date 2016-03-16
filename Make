@@ -1,4 +1,5 @@
 -R . IPC
+
 AvlTrees.v
 Cons_Counter_Model.v
 Derivable_Def_compute_derivations.v
@@ -34,4 +35,5 @@ Search.v
 Sound.v
 Trees.v
 Weight.v
--custom "$(CAMLBIN)ocamlopt -o benchmark search.mli search.ml test_formulae.ml benchmark.ml" "Extr.vo test_formulae.ml benchmark.ml" benchmark
+
+-extra benchmark "Extr.vo test_formulae.ml benchmark.ml" "$(CAMLBIN)ocamlopt -o benchmark search.mli search.ml test_formulae.ml benchmark.ml"
