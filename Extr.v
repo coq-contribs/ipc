@@ -2,6 +2,7 @@
    (c) Klaus Weich  *)
 
 Require Import Search.
+Require Extraction.
 
 Unset Extraction Optimize.
 Set Extraction AccessOpaque.
