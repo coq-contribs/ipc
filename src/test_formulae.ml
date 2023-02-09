@@ -75,7 +75,7 @@ let de_bruijn_n' n =
   Imp( (de_bruijn_lhs n0 n1 c), OrF( OrF(d,c), (neg d)));;
 
 
-    
+
 (********************************************************)
 (* Pigeonhole formulae                                  *)
 (********************************************************)
@@ -88,7 +88,7 @@ let pigeon_right n =
      (fun h ->
        (map_disj n
 	  (fun p1 ->
-	    (map_disj (n-p1) 
+	    (map_disj (n-p1)
 	       (fun p2' ->
 		 let p2=p2'+p1 in
 		 AndF( (pigeon_atom p1 h n), (pigeon_atom p2 h n))))))))
@@ -96,10 +96,10 @@ let pigeon_right n =
 let pigeon_left_p n =
   (map_conj n (fun i -> (map_disj n (fun j -> (pigeon_atom i j n)))));;
 let pigeon_left_n n =
-  (map_conj n 
-     (fun i -> 
-       (map_disj n 
-	  (fun j -> 
+  (map_conj n
+     (fun i ->
+       (map_disj n
+	  (fun j ->
 	    if i=j then
 	      (neg (neg (pigeon_atom i j n)))
 	    else
@@ -114,19 +114,19 @@ let pigeonhole_n n = Imp( (pigeon_left_n n), (pigeon_right n));;
 
 
 let franzen_p n =
-  (neg (neg (OrF( (map_disj (n-1) (fun i -> (neg (Atom i)))), 
+  (neg (neg (OrF( (map_disj (n-1) (fun i -> (neg (Atom i)))),
 		 (conj_n (n-1))))));;
 
 let franzen_p' n =
   let nneg a = Imp( a, (Atom n)) in
-  (nneg (nneg  (OrF( (conj_n (n-1)), 
+  (nneg (nneg  (OrF( (conj_n (n-1)),
 		    (map_disj (n-1) (fun i -> (nneg (Atom i))))))));;
 
 
 let franzen_n n =
   let nneg a = Imp( a, (Atom n)) in
-  (nneg (nneg  (OrF( (conj_n (n-1)), 
-		    (map_disj (n-1) 
+  (nneg (nneg  (OrF( (conj_n (n-1)),
+		    (map_disj (n-1)
 		       (fun i -> (nneg (neg (neg (Atom i))))))))));;
 
 
@@ -136,9 +136,9 @@ let franzen_n n =
 
 let schwicht_p n =
   let n1=(n-1) in
-  Imp( AndF( Atom(n1), 
-	    (map_conj n1 
-	       (fun i -> 
+  Imp( AndF( Atom(n1),
+	    (map_conj n1
+	       (fun i ->
 		 let i1 = if i=0 then n else (i-1) in
 		 Imp( Atom(i), Imp( Atom(i), Atom(i1)))))),
        Atom(n) );;
@@ -147,8 +147,8 @@ let schwicht_p n =
 let schwicht_n n =
   let n1=(n-1) in
   Imp( AndF( (neg (neg (Atom n1))),
-	    (map_conj n1 
-	       (fun i -> 
+	    (map_conj n1
+	       (fun i ->
 		 let i1 = if i=0 then n else (i-1) in
 		 Imp( Atom(i), Imp( Atom(i), Atom(i1)))))),
        Atom(n) );;
@@ -164,7 +164,7 @@ let korn_kreitz_p n =
   let a m = Atom(m + m) in
   let b m = Atom(m + m + 1) in
   (neg (AndF( AndF( (neg (a 0)), Imp( Imp( (b n), (b 0)), (a n))),
-             (map_conj (n-1) 
+             (map_conj (n-1)
 		(fun i -> Imp( Imp( (b i), (a (i+1))), (a i)))))));;
 
 let korn_kreitz_p' n =
@@ -172,7 +172,7 @@ let korn_kreitz_p' n =
   let b m = Atom(m + m + 1) in
   let nneg a = Imp( a, Atom(n+n) ) in
   (nneg (AndF( AndF( (nneg (a 0)), Imp( Imp( (b n), (b 0)), (a n))),
-             (map_conj (n-1) 
+             (map_conj (n-1)
 		(fun i -> Imp( Imp( (b i), (a (i+1))), (a i)))))));;
 
 
@@ -180,8 +180,8 @@ let korn_kreitz_n n =
   let a m = Atom(m + m) in
   let b m = Atom(m + m + 1) in
   (neg (AndF( AndF( (neg (a 0)), Imp( Imp( (neg (neg (b n))), (b 0)), (a n))),
-             (map_conj (n-1) 
-		(fun i -> 
+             (map_conj (n-1)
+		(fun i ->
 		  Imp( Imp( (neg (neg (b i))), (a (i+1))), (a i)))))));;
 
 let korn_kreitz_n' n =
@@ -189,7 +189,7 @@ let korn_kreitz_n' n =
   let b m = Atom(m + m + 1) in
   let nneg a = Imp( a, Atom(n+n) ) in
   (nneg (AndF( AndF( (nneg (a 0)), Imp( Imp( (neg (neg (b n))), (b 0)), (a n))),
-             (map_conj (n-1) 
+             (map_conj (n-1)
 		(fun i ->
 		  Imp( Imp( (neg (neg (b i))), (a (i+1))), (a i)))))));;
 
@@ -197,8 +197,8 @@ let korn_kreitz_n'' n =
   let a m = Atom(m + m) in
   let b m = Atom(m + m + 1) in
   let nneg a = Imp( a, Atom(n+n) ) in
-  (nneg (AndF( AndF( (nneg (a 0)), 
-		   (map_conj (n-1) 
+  (nneg (AndF( AndF( (nneg (a 0)),
+		   (map_conj (n-1)
 		      (fun i ->
 			Imp( Imp( (neg (neg (b i))), (a (i+1))), (a i))))),
 	      Imp( Imp( (neg (neg (b n))), (b 0)), (a n)))));;
@@ -222,11 +222,11 @@ let rec equiv_right n =
 
 
 let equiv_p n = (eqv (equiv_left (n)) (equiv_right (n)));;
-let equiv_n n = (eqv 
+let equiv_n n = (eqv
 		   (eqv (equiv_left (n-1)) (neg (neg (Atom n))))
 		   (equiv_right n));;
 
-let equiv_n' n = (eqv 
+let equiv_n' n = (eqv
 		   (equiv_left n)
 		   (eqv (neg (neg (Atom n))) (equiv_right (n-1))));;
 
@@ -249,9 +249,7 @@ let korn_kreitz_x n =
   let a m = Atom(m + m) in
   let b m = Atom(m + m + 1) in
   Imp( AndF( Imp( Imp( (b n), (b (n-1))), (a n)),
-	    (map_conj (n-1) 
+	    (map_conj (n-1)
 	       (fun i -> Imp( Imp( (b i), (a (i+1))), (a i))))),
-	    
+
        (a 0));;
-
-

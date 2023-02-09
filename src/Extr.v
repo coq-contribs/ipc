@@ -46,7 +46,7 @@ Extract Inductive sumbool => bool [ true false ].
          rule_atom_imp_b_imp_c_gamma rule_a_imp_b_imp_c_gamma nsearch.
 
 
- Extraction "search.ml" search.
+ Extraction "src/search.ml" search.
  Extraction Language Haskell.
- Extraction "search.hs" search.
+ Extraction "src/search.hs" search.
 

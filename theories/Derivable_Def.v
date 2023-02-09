@@ -2,7 +2,7 @@
 (* For extracting a decision procedure which returns either a
    derivation or a countermodel, activate the following: *)
 
-(* Require Export Derivable_Def_compute_derivations. *)
+(* From IPC Require Export Derivable_Def_compute_derivations. *)
 
 (* OR *)
 

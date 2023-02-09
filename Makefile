@@ -6,7 +6,7 @@ all: Makefile.coq
 
 clean: Makefile.coq
 	+$(MAKE) -f Makefile.coq cleanall
-	rm -f Makefile.coq Makefile.coq.conf
+	rm -f Makefile.coq Makefile.coq.conf src/search.hs src/search.ml src/search.mli
 	$(OCAMLBUILD) -clean
 
 Makefile.coq: _CoqProject
