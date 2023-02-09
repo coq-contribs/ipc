@@ -10,3 +10,4 @@ search.hs
 *.glob
 Makefile.coq
 Makefile.coq.conf
+_build/

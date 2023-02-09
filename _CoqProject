@@ -34,3 +34,4 @@ theories/NSearch.v
 theories/Rules.v
 theories/Weight.v
 theories/Search.v
+src/Extr.v
