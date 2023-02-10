@@ -1,7 +1,9 @@
-OCAMLBUILD = ocamlbuild -tag safe_string -pkg unix -I src
+OCAMLBUILD = ocamlbuild -tag safe_string -I src
 
-all: Makefile.coq
+default: Makefile.coq
 	+$(MAKE) -f Makefile.coq
+
+benchmark: default
 	$(OCAMLBUILD) benchmark.native
 
 clean: Makefile.coq
@@ -17,4 +19,4 @@ _CoqProject Makefile: ;
 %: Makefile.coq
 	+$(MAKE) -f Makefile.coq $@
 
-.PHONY: all clean
+.PHONY: default benchmark clean
