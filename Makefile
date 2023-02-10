@@ -1,16 +1,22 @@
-all: Makefile.coq
-	+make -f Makefile.coq all
+OCAMLBUILD = ocamlbuild -tag safe_string -I src
+
+default: Makefile.coq
+	+$(MAKE) -f Makefile.coq
+
+benchmark: default
+	$(OCAMLBUILD) benchmark.native
 
 clean: Makefile.coq
-	+make -f Makefile.coq clean
-	rm -f Makefile.coq
+	+$(MAKE) -f Makefile.coq cleanall
+	rm -f Makefile.coq Makefile.coq.conf src/search.hs src/search.ml src/search.mli
+	$(OCAMLBUILD) -clean
 
-Makefile.coq: Make
-	$(COQBIN)coq_makefile -f Make -o Makefile.coq
+Makefile.coq: _CoqProject
+	$(COQBIN)coq_makefile -f _CoqProject -o Makefile.coq
 
-Make: ;
+_CoqProject Makefile: ;
 
 %: Makefile.coq
-	+make -f Makefile.coq $@
+	+$(MAKE) -f Makefile.coq $@
 
-.PHONY: all clean
+.PHONY: default benchmark clean

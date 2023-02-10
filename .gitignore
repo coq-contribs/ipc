@@ -1,4 +1,13 @@
-benchmark
+benchmark.native
 search.ml
 search.mli
 search.hs
+*.d
+*.vo
+*.vok
+*.vos
+*.aux
+*.glob
+Makefile.coq
+Makefile.coq.conf
+_build/
