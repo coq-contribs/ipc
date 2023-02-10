@@ -49,9 +49,9 @@ ISBN 3-540-64406-7
 PRACTICAL DETAILS:
 -----------------
 
-Invoking `make` will compile only the Coq files. To perform the
-extraction, and compile the benchmark program, run `make benchmark` (which
-requires the `ocamlbuild` tool). This program can then be launched via
+Invoking `make` will compile the Coq files and perform the extraction. To
+compile the benchmark program, run `make benchmark` (which requires the
+`ocamlbuild` tool). This program can then be launched via
 `./benchmark.native`. This will run a sequence of increasingly difficult
 tests as long as these tests finish within 1 second of time. So the longer
 the output is, the better the checker is.
